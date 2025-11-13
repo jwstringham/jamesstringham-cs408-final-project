@@ -58,6 +58,4 @@ SyllabusSaver is a student-focused, full-stack web application that combines fil
 
 ## Project Wireframe
 
-TODO: Replace the wireframe below with you own design.
-
-![wireframe](wireframe-example.png)
+![wireframe](wireframe-landingpage.png)
