@@ -10,13 +10,13 @@ The web app uses AWS services on the backend to extract and manage information. 
 ### What It Will Do
 SyllabusSaver will allow students to upload syllabus PDFs and automatically extract key course data. The user interface will have four main pages:
 
-*index.html – The landing page that introduces the app and contains the file upload form. Students can add a new course by uploading their syllabus and optionally entering the course name, instructor, and semester. Once uploaded, the file is sent to AWS S3 and triggers a Lambda function to begin text extraction.
+* index.html – The landing page that introduces the app and contains the file upload form. Students can add a new course by uploading their syllabus and optionally entering the course name, instructor, and semester. Once uploaded, the file is sent to AWS S3 and triggers a Lambda function to begin text extraction.
 
-*courses.html – This page lists all uploaded courses stored in the DynamoDB database. Students can filter courses by semester, instructor, or course name. Each course listing shows the extracted summary data such as the total number of assignments and the grading breakdown. Users can also delete courses they no longer need.
+* courses.html – This page lists all uploaded courses stored in the DynamoDB database. Students can filter courses by semester, instructor, or course name. Each course listing shows the extracted summary data such as the total number of assignments and the grading breakdown. Users can also delete courses they no longer need.
 
-*tasks.html – This page displays all of the tasks and due dates extracted from syllabi. Students can filter tasks by course, due date range, or task type. Tasks can be edited or deleted, and updates are saved back to the AWS database.
+* tasks.html – This page displays all of the tasks and due dates extracted from syllabi. Students can filter tasks by course, due date range, or task type. Tasks can be edited or deleted, and updates are saved back to the AWS database.
 
-*insights.html – This page visualizes data about the user’s workload. It displays charts and statistics such as which weeks are the busiest, what percentage of the final grade each category contributes, and how many assignments are upcoming. This helps students identify high-stress periods in the semester and plan accordingly.
+* insights.html – This page visualizes data about the user’s workload. It displays charts and statistics such as which weeks are the busiest, what percentage of the final grade each category contributes, and how many assignments are upcoming. This helps students identify high-stress periods in the semester and plan accordingly.
 
 The web app’s workflow is straightforward: upload a syllabus, view the parsed results, interact with your list of tasks, and visualize your schedule. It uses AWS on the backend, dynamically retrieves and displays data, allows CRUD operations, and will include 20 or more CSS styles across multiple pages.
 
