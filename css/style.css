@@ -1,4 +1,281 @@
-h1{
-  border-color: #d3e644;
-  border-style: dashed;
+/* ---------- Base layout ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #000;
+    color: #f8f8f8;
+}
+
+/* ---------- Header / nav ---------- */
+
+.top-header {
+    padding: 24px 32px 12px;
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    padding: 16px 64px;
+    background-color: #a46c21;      /* warm brown */
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+}
+
+.tagline {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 6px 24px;
+    background-color: #a46c21;
+    color: #fff;
+    font-size: 0.95rem;
+    border-radius: 4px;
+}
+
+.nav-bar {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.nav-btn {
+    padding: 8px 22px;
+    background-color: #fdf7f0;
+    color: #3a2a16;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    box-shadow: 0 0 0 1px #cda671;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.nav-btn:hover {
+    background-color: #fff;
+    transform: translateY(-1px);
+}
+
+.nav-btn.active {
+    background-color: #a46c21;
+    color: #fff;
+}
+
+/* ---------- Main / cards ---------- */
+
+.main-content {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 20px 16px 40px;
+}
+
+.card {
+    background-color: #faf6f1;
+    color: #2f2415;
+    border-radius: 6px;
+    padding: 20px 22px 24px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    max-width: 480px;
+    width: 100%;
+}
+
+.upload-card {
+    max-width: 420px;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+/* ---------- Forms ---------- */
+
+.upload-form,
+.task-form {
+    margin-top: 4px;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.field-row label {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #5a4123;
+}
+
+.field-row input,
+.task-form input,
+.task-form select {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #cda671;
+    font-size: 0.95rem;
+    outline: none;
+    background: #fff;
+    color: #2f2415;
+}
+
+.field-row input:focus,
+.task-form input:focus,
+.task-form select:focus {
+    border-color: #a46c21;
+    box-shadow: 0 0 0 2px rgba(164, 108, 33, 0.25);
+}
+
+/* ---------- File drop box ---------- */
+
+.file-drop {
+    margin: 14px 0 16px;
+    padding: 22px 16px;
+    border-radius: 4px;
+    border: 2px dashed #cda671;
+    background-color: #fff8ef;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7a5a31;
+}
+
+.file-drop input[type="file"] {
+    margin-top: 10px;
+}
+
+/* ---------- Buttons & status ---------- */
+
+.primary-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    padding: 9px 22px;
+    background-color: #a46c21;
+    color: #fff;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.primary-btn:hover {
+    background-color: #b87b2a;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+}
+
+.status-msg {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #5a4123;
+}
+
+/* ---------- Lists (courses / tasks) ---------- */
+
+.list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.course-item,
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 4px;
+    border: 1px solid #e0c8a2;
+    background-color: #fffdf8;
+    margin-bottom: 8px;
+}
+
+.course-item strong,
+.task-item strong {
+    font-size: 0.98rem;
+}
+
+.course-item small,
+.task-item small {
+    font-size: 0.8rem;
+    color: #7f6847;
+}
+
+.btn-delete,
+.btn-delete-task {
+    border: none;
+    background-color: #f1ddd2;
+    color: #7a2a2a;
+    border-radius: 3px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.btn-delete:hover,
+.btn-delete-task:hover {
+    background-color: #e1c3b5;
+}
+
+/* ---------- Tasks page layout ---------- */
+
+body[data-page="tasks"] .main-content {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body[data-page="tasks"] .card {
+    max-width: 420px;
+}
+
+/* ---------- Insights ---------- */
+
+#insights-summary {
+    line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.1rem;
+        padding: 12px 32px;
+    }
+
+    .nav-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 10px 30px;
+    }
+
+    .card,
+    .upload-card {
+        max-width: 100%;
+    }
 }

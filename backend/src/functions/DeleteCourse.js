@@ -8,7 +8,7 @@ app.http("DeleteCourse", {
     route: "courses/{id}",
     handler: async (request, context) => {
         try {
-            const id = request.params.get("id");
+            const id = request.params.id;
             const userId =
                 request.query.get("userId") || "demo-user"; // partition key
 
@@ -27,7 +27,7 @@ app.http("DeleteCourse", {
                 jsonBody: { message: "Course deleted" }
             };
         } catch (err) {
-            context.log.error("DeleteCourse error:", err);
+            context.log("DeleteCourse error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error deleting course" }

@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Website",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/"
+        },
+        {
+            "name": "Attach to Node Functions",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229,
+            "preLaunchTask": "func: host start"
+        }
+    ]
+}

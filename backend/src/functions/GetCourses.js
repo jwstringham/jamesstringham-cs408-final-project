@@ -23,7 +23,7 @@ app.http("GetCourses", {
                 jsonBody: resources
             };
         } catch (err) {
-            context.log.error("GetCourses error:", err);
+            context.log("GetCourses error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error retrieving courses" }

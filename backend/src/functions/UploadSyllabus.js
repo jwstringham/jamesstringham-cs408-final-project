@@ -41,7 +41,7 @@ app.http("UploadSyllabus", {
                 }
             };
         } catch (err) {
-            context.log.error("Upload error:", err);
+            context.log("Upload error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error uploading syllabus" }

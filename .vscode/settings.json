@@ -19,5 +19,12 @@
 	"eslint.format.enable": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
-	}
+	},
+	"azureFunctions.deploySubpath": "backend",
+	"azureFunctions.postDeployTask": "npm install (functions)",
+	"azureFunctions.projectLanguage": "JavaScript",
+	"azureFunctions.projectRuntime": "~4",
+	"debug.internalConsoleOptions": "neverOpen",
+	"azureFunctions.projectLanguageModel": 4,
+	"azureFunctions.preDeployTask": "npm prune (functions)"
 }

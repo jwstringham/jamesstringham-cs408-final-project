@@ -29,7 +29,7 @@ app.http("GetTasks", {
                 jsonBody: resources
             };
         } catch (err) {
-            context.log.error("GetTasks error:", err);
+            context.log("GetTasks error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error retrieving tasks" }

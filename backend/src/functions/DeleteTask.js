@@ -8,7 +8,7 @@ app.http("DeleteTask", {
     route: "tasks/{id}",
     handler: async (request, context) => {
         try {
-            const id = request.params.get("id");
+            const userId = request.query.get("userId") || "demo-user"; 
             const courseId =
                 request.query.get("courseId") ||
                 (await (async () => {
@@ -37,7 +37,7 @@ app.http("DeleteTask", {
                 jsonBody: { message: "Task deleted" }
             };
         } catch (err) {
-            context.log.error("DeleteTask error:", err);
+            context.log("DeleteTask error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error deleting task" }

@@ -42,7 +42,7 @@ app.http("CreateTask", {
                 jsonBody: resource
             };
         } catch (err) {
-            context.log.error("CreateTask error:", err);
+            context.log("CreateTask error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error creating task" }

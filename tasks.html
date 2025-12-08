@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SyllabusSaver – Tasks</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="tasks">
+    <header class="top-header">
+        <h1 class="logo">SyllabusSaver</h1>
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="courses.html" class="nav-btn">Courses</a>
+            <a href="tasks.html" class="nav-btn active">Tasks</a>
+            <a href="insights.html" class="nav-btn">Insights</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="card">
+            <h2>Tasks</h2>
+
+            <label>
+                Course:
+                <select id="task-course-select"></select>
+            </label>
+
+            <p id="tasks-status" class="status-msg"></p>
+            <ul id="tasks-list" class="list"></ul>
+        </section>
+
+        <section class="card">
+            <h2>Add Task</h2>
+            <form id="task-form" class="task-form">
+                <div class="field-row">
+                    <label>Title</label>
+                    <input type="text" name="title" required />
+                </div>
+                <div class="field-row">
+                    <label>Due Date</label>
+                    <input type="date" name="dueDate" />
+                </div>
+                <div class="field-row">
+                    <label>Type</label>
+                    <input type="text" name="type" placeholder="Homework, Exam, Project..." />
+                </div>
+                <div class="field-row">
+                    <label>Weight</label>
+                    <input type="number" name="weight" min="0" max="100" />
+                </div>
+
+                <button type="submit" class="primary-btn">Add Task</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

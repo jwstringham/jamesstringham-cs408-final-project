@@ -41,7 +41,7 @@ app.http("CreateCourse", {
                 jsonBody: resource
             };
         } catch (err) {
-            context.log.error("CreateCourse error:", err);
+            context.log("CreateCourse error:", err);
             return {
                 status: 500,
                 jsonBody: { error: "Error creating course" }
