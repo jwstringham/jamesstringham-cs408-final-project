@@ -24,7 +24,6 @@ app.storageBlob("ProcessSyllabus", {
                 return;
             }
 
-            // 3) Ask Azure OpenAI to extract course+tasks
             const parsed = await extractCourseAndTasks(text);
 
             if (!parsed || !parsed.courseName) {
@@ -34,11 +33,10 @@ app.storageBlob("ProcessSyllabus", {
 
             const courseId = "course-" + uuidv4();
 
-            // 4) Insert course into Cosmos
             const courses = coursesContainer();
             const courseDoc = {
                 id: courseId,
-                userId: "demo-user", // later: derive from blob metadata if needed
+                userId: "demo-user",
                 courseName: parsed.courseName,
                 instructor: parsed.instructor || "",
                 semester: parsed.semester || "",
@@ -47,7 +45,6 @@ app.storageBlob("ProcessSyllabus", {
             };
             await courses.items.create(courseDoc);
 
-            // 5) Insert tasks into Cosmos
             const tasksContainerClient = tasksContainer();
             for (const t of parsed.tasks || []) {
                 await tasksContainerClient.items.create({
@@ -70,32 +67,26 @@ app.storageBlob("ProcessSyllabus", {
         }
     }
 });
+
 function safeJsonParse(maybeJson) {
-  if (!maybeJson) return null;
+    if (!maybeJson) return null;
 
-  // Trim and remove common markdown code fences
-  let s = maybeJson.trim();
+    let s = maybeJson.trim();
 
-  // ```json ... ```
-  s = s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
+    s = s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
 
-  // If model included leading/trailing junk, try to extract the first {...} block
-  const firstBrace = s.indexOf("{");
-  const lastBrace = s.lastIndexOf("}");
-  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
-    s = s.slice(firstBrace, lastBrace + 1);
-  }
+    const firstBrace = s.indexOf("{");
+    const lastBrace = s.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+        s = s.slice(firstBrace, lastBrace + 1);
+    }
 
-  try {
-    return JSON.parse(s);
-  } catch (e) {
-    return null;
-  }
+    try {
+        return JSON.parse(s);
+    } catch (e) {
+        return null;
+    }
 }
-
-// ---------------------
-// Azure OpenAI helper
-// ---------------------
 
 async function extractCourseAndTasks(text) {
     const prompt = `

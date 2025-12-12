@@ -7,8 +7,11 @@
   "author": "Pat von Student",
   "scripts": {
     "lint:html": "htmlhint"
-    },
+  },
   "devDependencies": {
     "qunit": "^2.21.1"
+  },
+  "dependencies": {
+    "@azure/openai": "^2.0.0"
   }
 }

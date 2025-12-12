@@ -20,30 +20,19 @@
     <main class="main-content">
         <section class="card upload-card">
             <h2>Get Started</h2>
-            <p>Complete the fields and upload a PDF syllabus to create a new course.</p>
+            <p>Upload a PDF syllabus to get started!</p>
 
             <form id="upload-form" class="upload-form">
-                <div class="field-row">
-                    <label>Course Name</label>
-                    <input type="text" name="courseName" required />
-                </div>
-                <div class="field-row">
-                    <label>Instructor Name</label>
-                    <input type="text" name="instructor" required />
-                </div>
-                <div class="field-row">
-                    <label>Semester</label>
-                    <input type="text" name="semester" placeholder="e.g., Fall 2025" required />
-                </div>
-
                 <div class="file-drop">
-                    <p>Drag and drop a syllabus PDF here<br />or click “Browse” to select it.</p>
-                    <input type="file" name="syllabusFile" accept="application/pdf" />
+                    <p>Upload a syllabus PDF to auto-create a course and its tasks.</p>
+                    <label for="syllabusFile">Syllabus PDF</label>
+                    <input id="syllabusFile" type="file" name="syllabusFile" accept="application/pdf" required />
                 </div>
 
-                <button type="submit" class="primary-btn">Submit</button>
+                <button type="submit" class="primary-btn">Upload Syllabus</button>
                 <p id="upload-status" class="status-msg"></p>
             </form>
+
         </section>
     </main>
 

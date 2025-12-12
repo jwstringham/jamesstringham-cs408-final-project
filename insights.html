@@ -19,10 +19,51 @@
     <main class="main-content">
         <section class="card">
             <h2>Insights</h2>
+
+            <!-- Stat cards -->
+            <div class="insights-grid">
+            <div class="insight-kpi">
+                <div class="kpi-label">Courses</div>
+                <div id="kpi-courses" class="kpi-value">–</div>
+            </div>
+            <div class="insight-kpi">
+                <div class="kpi-label">Total tasks</div>
+                <div id="kpi-tasks" class="kpi-value">–</div>
+            </div>
+            <div class="insight-kpi">
+                <div class="kpi-label">Due in next 7 days</div>
+                <div id="kpi-next7" class="kpi-value">–</div>
+            </div>
+            <div class="insight-kpi">
+                <div class="kpi-label">Overdue</div>
+                <div id="kpi-overdue" class="kpi-value">–</div>
+            </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="insights-grid charts">
+            <div class="chart-card">
+                <h3>Task types</h3>
+                <canvas id="chart-types" height="220"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Tasks per course</h3>
+                <canvas id="chart-by-course" height="220"></canvas>
+            </div>
+            </div>
+
+            <!-- Upcoming list -->
+            <div class="chart-card">
+            <h3>Upcoming deadlines</h3>
+            <div id="upcoming-list" class="upcoming-list"></div>
             <p id="insights-summary" class="status-msg"></p>
+            </div>
         </section>
     </main>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
