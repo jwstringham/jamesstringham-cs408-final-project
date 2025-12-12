@@ -1,5 +1,5 @@
 // js/main.js
-const API_BASE = "http://localhost:7071/api";
+const API_BASE = "https://func-syllabi-hsb5bfc0cudbarcj.westus3-01.azurewebsites.net/api";
 
 // ---------- helpers ----------
 
