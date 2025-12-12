@@ -129,7 +129,7 @@ Syllabus text:
         const options = { endpoint, apiKey, deployment, apiVersion }
         const client = new AzureOpenAI(options);
         const completion = await client.chat.completions.create({
-            model: deployment,   // use your deployment name here
+            model: deployment, 
             temperature: 0,
             response_format: { type: "json_object" },
             messages: [
