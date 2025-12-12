@@ -8,7 +8,6 @@ app.http("UploadSyllabus", {
     route: "upload-syllabus",
     handler: async (request, context) => {
         try {
-            // Expect JSON: { fileBase64: "...." }
             const body = await request.json();
             const fileBase64 = body.fileBase64;
 
